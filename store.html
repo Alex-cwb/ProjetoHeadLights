@@ -7,39 +7,196 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>headLights Store</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* imagem do fundo da página */
+        
         body {
             background-image: url("Imagens/Imagem Fundo.jpeg");
             background-size: cover;
             background-repeat: no-repeat;
+            background-attachment: fixed;
         }
+        /* imagem do logotipo da loja */
         
         .logoStore {
             background-image: url("Imagens/HeadLights Store.png");
-            background-size: 900px;
+            background-size: 500px;
             background-position: center;
             background-repeat: no-repeat;
             height: 200px;
         }
-        
-        h1 {
-            color: white;
-            font-size: 50px;
-            font-family: ethnocentric rg;
-            text-align: center;
-            margin-bottom: 150px;
-            margin-top: 80px;
-        }
+        /* configurando a fonte dos textos */
         
         @font-face {
             font-family: ethnocentric rg;
             src: url("Imagens/ethnocentric rg.ttf");
         }
+        /* desenhando a barra de categorias */
+        
+        div.barraCategoria {
+            background-color: #000901;
+            opacity: 0.9;
+            width: 100%;
+            height: 70px;
+            padding: 1px;
+            border-radius: 1px 50px;
+            box-shadow: -4px 4px 1px #000000, -7px 7px 1px #499531;
+        }
+        /* criando o botáo de categorias */
+        
+        .btnCategoria {
+            max-width: 3000px;
+            max-height: 80px;
+            background-color: transparent;
+            border-style: none solid;
+            border-width: 2px;
+            border-color: #499531;
+            /* movendo as bordas horizontais, para deixar o botão com efeito de bordas laterais na diagonal (20 graus),
+            e configurando para outros navegadores */
+            transform: skewX(20deg);
+            -ms-transform: skewX(20deg);
+            -webkit-transform: skewX(20deg);
+            /* mudança do ícone do cursor do mouse */
+            cursor: pointer;
+            /* deixando tudo dentro das limitações do botão */
+            overflow: hidden;
+        }
+        /* configurando o texto dentro do botão */
+        
+        p.formaTexto {
+            font: 18px ethnocentric rg;
+            color: white;
+            text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
+            padding: 2px 20px;
+            transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg);
+        }
+        /* quando o cursor do mouse estiver em cima do botão */
+        
+        .btnCategoria:hover {
+            background-color: rgb(255, 255, 255, 0.05);
+            color: white;
+        }
+        /* a animação quando o botão é clicado */
+        
+        .btnCategoria:after {
+            /* desenho do efeito */
+            content: "";
+            background-color: white;
+            position: absolute;
+            display: block;
+            /* dimenssões para a cor de preenchimento da animação */
+            padding-top: 500%;
+            padding-left: 200%;
+            margin-left: -50% !important;
+            margin-top: -80%;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        /* ?????????????????????? */
+        
+        .btnCategoria:active:after {
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+        /* o que acontece depois do clique no botão */
+        
+        .btnCategoria:focus {
+            background-color: rgb(255, 255, 255, 0.1);
+            outline-style: none;
+        }
+        
+        .slider {
+            display: block;
+            height: auto;
+            width: auto;
+            margin: auto;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .slider li {
+            list-style: none;
+            position: absolute;
+        }
+        
+        .slider img {
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            vertical-align: top;
+        }
+        
+        .slider input {
+            display: none;
+        }
+        
+        .slider label {
+            background-color: white;
+            bottom: 10px;
+            cursor: pointer;
+            display: block;
+            height: 10px;
+            position: absolute;
+            width: 10px;
+            z-index: 1;
+        }
+        
+        .slider li:nth-child(1) label {
+            left: 40px;
+        }
+        
+        .slider li:nth-child(2) label {
+            left: 50px;
+        }
+        
+        .slider img {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .slider li input:checked~img {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <h1>EM BREVE</h1>
-    </div>
     <div class="logoStore"></div>
+    <div class="barraCategoria">
+        <div style="display: inline-block; margin-left: 25%;">
+            <button class="btnCategoria"><p class="formaTexto ">MASCULINO</p></button>
+        </div>
+        <div style="display: inline-block; margin-left: 2%;">
+            <button class="btnCategoria"><p class="formaTexto ">FEMININO</p></button>
+        </div>
+        <div style="display: inline-block; margin-left: 2%;">
+            <button class="btnCategoria"><p class="formaTexto ">ACESSÓRIOS</p></button>
+        </div>
+    </div>
+
+    <div>
+        <ul class="slider">
+            <li>
+                <input type="radio" id="slide1" name="slide" checked>
+                <label for="slide1"></label>
+                <img src="Slide/1.jpg" />
+            </li>
+            <li>
+                <input type="radio" id="slide2" name="slide">
+                <label for="slide2"></label>
+                <img src="Slide/2.jpg" />
+            </li>
+        </ul>
+    </div>
+
 </body>
+
+</html>
