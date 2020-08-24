@@ -7,17 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>headLights</title>
     <style>
-        /*Imagem de fundo*/
-        
         body {
+            /* Imagem de fundo */
             background-image: url("Imagens/Imagem Fundo.jpeg");
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
         }
-        /*Logo principal*/
         
         .logo {
+            /* Logo Principal */
             background-image: url("Imagens/Imagem Logo.png");
             background-position: center;
             background-repeat: no-repeat;
@@ -26,114 +25,71 @@
             width: center;
             position: relative;
         }
-        /* Formatação da fonte */
         
         @font-face {
-            font-family: ethnocentric rg;
+            /* Configurar a fonte padrão */
+            font-family: ethnocentric;
             src: url("Imagens/ethnocentric rg.ttf");
         }
         
         h1.titulo {
+            /* Configurar o formato da fonte dos títulos */
             font-size: 20px;
-            font-family: ethnocentric rg;
+            font-family: ethnocentric;
             text-align: center;
             color: white;
             text-shadow: -2px 2px 1px #000000, -4px 4px 1px #499531;
         }
-        /*Formatação do texto principal*/
         
         p.texto {
+            /*---- Formatação do texto principal*/
+            background-color: rgb(0, 0, 0, 0.3);
             text-align: center;
+            line-height: 1.5;
             font-size: 18px;
             font-style: normal;
-            font-family: ethnocentric rg;
+            font-family: ethnocentric;
             color: white;
             margin: 15px 200px;
             text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
         }
-        /*Formatação padrão titulos*/
         
         div.icones {
+            /*------ Formatação dos títulos acima dos ícones */
             top: 30px;
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
             display: flex;
+            margin-bottom: 100px;
         }
         /* Icone Loja */
         
         img.icone-loja {
-            height: 90px;
-            width: 90px;
-            margin-left: 350px;
-            margin-top: -10px;
+            height: 150px;
+            width: 150px;
+            margin: -10px 0 0 300px;
         }
         
         img.icone-loja:hover {
-            height: 100px;
-            width: 100px;
+            height: 160px;
+            width: 160px;
             margin-top: -20px;
-            margin-left: 340px;
+            margin-right: -10px;
         }
-        /* Icone Email */
         
-        img.icone-email {
+        img.tamIcone {
+            /* --------- Tamanho dos ícones */
             height: 80px;
             width: 80px;
-            margin-left: 220px;
-            border: 0px;
-        }
-        
-        img.icone-email:hover {
-            height: 90px;
-            width: 90px;
-            margin-top: -10px;
-            margin-left: 210px;
-        }
-        /*Icone Instagram*/
-        
-        img.icone-instagram {
-            height: 80px;
-            width: 80px;
-            margin-left: 50px;
             border: none;
         }
         
-        img.icone-instagram:hover {
+        img.tamIcone:hover {
             height: 90px;
             width: 90px;
+            margin-right: -10px;
             margin-top: -10px;
-            margin-left: 40px;
-        }
-        /*Icone Facebook*/
-        
-        img.icone-facebook {
-            height: 80px;
-            width: 80px;
-            margin-left: 50px;
-            border: 0px;
-        }
-        
-        img.icone-facebook:hover {
-            height: 90px;
-            width: 90px;
-            margin-top: -10px;
-            margin-left: 40px;
-        }
-        /* Icone Whatsapp */
-        
-        img.icone-whatsapp {
-            height: 80px;
-            width: 80px;
-            margin-left: 50px;
-            border: 0px;
-        }
-        
-        img.icone-whatsapp:hover {
-            height: 90px;
-            width: 90px;
-            margin-top: -10px;
-            margin-left: 40px;
         }
     </style>
 </head>
@@ -143,40 +99,43 @@
     <div class="logo"></div>
     <div style="top: 30px">
         <h1 class="titulo">QUEM É A HEADLIGHTS</h1>
-        <p class="texto">A Headlights é um sinônimo de uma luz que nós acreditamos ser o ideal. O foco principal da label e o minimalismo, pois nós estamos pronto para trazer um novo conceito para a cena eletrônica, através de muita música boa. O núcleo será voltado a
-            produção de eventos e gerenciamento de DJs. Nós estaremos dando início a marca de roupas próprias e também demais acessórios, etc ...</p>
+        <p class="texto">A HEADLIGHTS trás um conceito diferente para o estilo em Geral. Procuramos ser Luz para chamar a atenção e melhor atender nosso público. Tem várias pessoas que estão nos perguntando o que é a Headlights ? Qual é o foco ? Qual é o significado do
+            nome? A Headlights é a Luz principal que nós acreditamos ser o ideal. Através desse contexto e deste nome que nós procuramos trazer algo inovador para vocês. A Headlights foi criado como uma marca de roupa para atender todos os estilos e gosto
+            de nossos clientes. O foco é chamar a atenção e trazer uma luz para cada uma das pessoas, não importa a distância que estejam . Queremos apresentar para vocês um pouco dos nossos produtos que vem sendo estudado a algum tempo já. Queremos que
+            a Headlights esteja em vários lugares trazendo cores e estilo para cada traje que vocês vão estar vestindo.</p>
     </div>
     <div style="margin-top: 80px;">
-        <h1 class="titulo" style="display: inline; margin-left: 200px;">ACESSE NOSSA LOJA</h1>
-        <h1 class="titulo" style="display: inline; margin-left: 200px;">NOSSOS CONTATOS</h1>
+        <h1 class="titulo" style="display: inline; margin-left: 150px;">ACESSE NOSSA LOJA</h1>
+        <h1 class="titulo" style="display: inline; margin-left: 220px;">NOSSOS CONTATOS</h1>
     </div>
 
     <div class="icones">
         <!-- Link para Loja -->
         <div>
-            <a href="https://rawcdn.githack.com/Alex-cwb/ProjetoHeadLights/564bd12d5f42e90150186f06d4db7dae8c48a81b/store.html">
-                <img src="Imagens/logo loja.png" alt="Loja" class="icone-loja"></a>
+            <a href="file:///C:/Users/alex1.DESKTOP-6C8MFV9/Desktop/Meus%20Projetos/Projetos/HeadLights/P%C3%A1gina/store.html">
+                <img src="Imagens/logo loja.png" alt="Loja" class="icone-loja" style="margin-left: 220px;"></a>
         </div>
         <!-- Link do Gmail -->
         <div>
             <a href="https://outlook.live.com/owa/" target="blank">
-                <img src="Imagens/logo outlook.png" alt="Gmail" class="icone-email"></a>
+                <img src="Imagens/logo outlook.png" alt="Gmail" class="tamIcone" style="margin-left: 220px;"></a>
         </div>
         <!-- Link do Instagram -->
         <div>
             <a href="https://www.instagram.com/headlightsofficial_/?hl=pt-br" target="blank">
-                <img src="Imagens/logo instagram.png" alt="Instagram" class="icone-instagram"></a>
+                <img src="Imagens/logo instagram.png" alt="Instagram" class="tamIcone" style="margin-left: 50px;"></a>
         </div>
         <!-- Link do Facebook -->
         <div>
             <a href="https://www.facebook.com/headlightsoficial" target="blank">
-                <img src="Imagens/logo facebook.png" alt="Facebook" class="icone-facebook"></a>
+                <img src="Imagens/logo facebook.png" alt="Facebook" class="tamIcone" style="margin-left: 50px;"></a>
         </div>
         <!-- Link do Whatsapp -->
         <div>
             <a href="https://api.whatsapp.com/send?phone=5541996988460" target="blank">
-                <img src="Imagens/logo whatsapp.png" alt="Whatsapp" class="icone-whatsapp"></a>
+                <img src="Imagens/logo whatsapp.png" alt="Whatsapp" class="tamIcone" style="margin-left: 50px;"></a>
         </div>
+        <div><img src="Imagens/code QR.jpeg" alt="QRcode Whatsapp" style="margin-left: 50px; width: 200px;"></div>
     </div>
 
 </body>

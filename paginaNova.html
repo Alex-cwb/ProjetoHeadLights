@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeadLights Store</title>
+    <title>Página Teste</title>
     <style>
         body {
             /* Configurando a imagem de fundo da página */
@@ -58,12 +58,10 @@
         }
         
         button#btnCat:hover {
-            /* Efeito quando o mouse estiver em cima do botão */
             background-color: rgb(255, 255, 255, 0.3);
         }
         
         button#btnCat:after {
-            /* Efetio que ocorre quando o botão é clicado */
             content: "";
             background-color: white;
             position: absolute;
@@ -83,13 +81,11 @@
         }
         
         button#btnCat:focus {
-            /* Efeito após o clique no botão */
             background-color: rgb(255, 255, 255, 0.1);
             outline-style: none;
         }
         
         p#textBtn {
-            /* Configurando o texto dentro do botão, para não ficar retorcido */
             font: 18px ethnocentric;
             color: white;
             background-color: transparent;
@@ -100,8 +96,15 @@
             text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
         }
         
+        #slide {
+            display: block;
+            animation-name: animation;
+            -webkit-animation-name: animation;
+            animation-duration: 1.5s;
+            -webkit-animation-duration: 1.5s;
+        }
+        
         .slider {
-            /* Margens para o slide */
             display: none;
             height: 500px;
             text-align: center;
@@ -109,12 +112,10 @@
         }
         
         img.imgSlide {
-            /* Definindo o tamanho padrão das imagens do slide (altura padrão) */
             height: 500px;
         }
         
         .numberSlide {
-            /* Configurando a fonte o a posição do número da imagem do slide */
             color: white;
             font: 12px ethnocentric;
             padding-top: 8px;
@@ -124,7 +125,6 @@
         }
         
         .marcador {
-            /* Definindo o tamanho, cor e posição do marcador abaixo do slide */
             height: 15px;
             width: 15px;
             margin: 0 2px;
@@ -140,7 +140,6 @@
         }
         
         .animation {
-            /* Animação do efeito de transição slide */
             animation-name: animation;
             -webkit-animation-name: animation;
             animation-duration: 1.5s;
@@ -166,7 +165,6 @@
         }
         
         ul.formatAlign {
-            /* Formatando a tabela para as roupas */
             position: absolute;
             padding-left: 0;
             list-style-type: none;
@@ -179,7 +177,6 @@
         }
         
         ul#align {
-            /* alinhando as imagens */
             max-width: 100px;
             display: flex;
             position: relative;
@@ -191,20 +188,8 @@
         }
         
         img.imgRoupa {
-            /* Formatando o tamanho das imagens */
             height: 250px;
             margin: 20px;
-        }
-        
-        div#vestMasculino,
-        div#vestFeminino,
-        div#vestAcessorios {
-            /* Deixando os blocos de conteúdo dos vestuários oculto */
-            display: none;
-            animation-name: animation;
-            -webkit-animation-name: animation;
-            animation-duration: 1.5s;
-            -webkit-animation-duration: 1.5s;
         }
         
         button#btnComprar {
@@ -251,14 +236,22 @@
             background-color: rgb(255, 255, 255, 0.1);
             outline-style: none;
         }
+        
+        div#vestMasculino,
+        div#vestFeminino,
+        div#vestAcessorios {
+            display: none;
+            animation-name: animation;
+            -webkit-animation-name: animation;
+            animation-duration: 1.5s;
+            -webkit-animation-duration: 1.5s;
+        }
     </style>
 
 </head>
 
 <body>
-    <!-- Imagem da logo -->
     <img src="Imagens/HeadLights Store.png" class="logoLoja" />
-    <!-- Barra com os botões das categorias de vestuários -->
     <div class="barraCtg">
         <span style="margin-left: 25%;">
             <button id="btnCat" 
@@ -269,7 +262,7 @@
             onclick="mostrarConteudo('vestAcessorios', 'vestMasculino', 'vestFeminino')"><p id="textBtn">ACESSÓRIOS</p></button>
         </span>
     </div>
-    <!-- O slide das imagens -->
+
     <div id="slide">
         <div class="slider animation">
             <div class="numberSlide">1 / 3</div>
@@ -286,7 +279,7 @@
             <span class="marcador"></span>
             <span class="marcador"></span></div>
     </div>
-    <!-- Vestuário masculino -->
+
     <div id="vestMasculino">
         <ul class="formatAlign">
             <ul id="align">
@@ -310,7 +303,7 @@
             </ul>
         </ul>
     </div>
-    <!-- Vestuário feminino -->
+
     <div id="vestFeminino">
         <ul class="formatAlign">
             <ul id="align">
@@ -329,11 +322,11 @@
             </ul>
         </ul>
     </div>
-    <!-- Vestuário dos acessórios -->
+
     <div id="vestAcessorios">
-        <ul class=" formatAlign ">
-            <ul id="align ">
-                <li><img src="Store/Cordão.jpeg " class="imgRoupa ">
+        <ul class="formatAlign">
+            <ul id="align">
+                <li><img src="Store/Cordão.jpeg" class="imgRoupa">
                     <br>CORDÃO<br>R$ 20,00<br>
                     <button id="btnComprar">COMPRAR</button></li>
             </ul>
@@ -346,44 +339,33 @@
 
         function showSlides() {
 
-            /* Definindo as variáveis, com as classes que serão utilizadas */
             var i;
             var slides = document.getElementsByClassName("slider ");
             var dots = document.getElementsByClassName("marcador ");
 
-            /* Não sei exatamente o que faz esse trecho */
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none ";
             }
-
-            /* Incrementa para iniciar a animação do slide */
             slideIndex++;
-
-            /* Se a variável for maior que o tamanho do slide, o valor volta a ser o valor inicial */
             if (slideIndex > slides.length) {
                 slideIndex = 1
             }
-
-            /* Sincroniza os marcadores, junto a imagem do slide */
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active ", " ");
             }
-
-            /* Onde faz a transição das imagens do slide */
             slides[slideIndex - 1].style.display = "block ";
             dots[slideIndex - 1].className += " active ";
             setTimeout(showSlides, 3000);
         }
 
-        function mostrarConteudo(conteudo, ocultar1, ocultar2) {
-            /* Função para a transição de categoria */
+        function mostrarConteudo(conteudo, oculta1, oculta2) {
             var display = document.getElementById(conteudo).style.display;
-
+            var verSlide = document.getElementById("slide").style.display;
             if (display == "none") {
                 document.getElementById(conteudo).style.display = "block";
+                document.getElementById(oculta2).style.display = "none";
+                document.getElementById(oculta1).style.display = "none";
                 document.getElementById("slide").style.display = "none";
-                document.getElementById(ocultar1).style.display = "none";
-                document.getElementById(ocultar2).style.display = "none";
             } else {
                 document.getElementById(conteudo).style.display = "none";
                 document.getElementById("slide").style.display = "block";
