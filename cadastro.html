@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font: 100% ethnocentric;
+            background-color: #002007;
+            color: white;
+            text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
+        }
+        
+        @font-face {
+            font-family: ethnocentric;
+            src: url("Imagens/ethnocentric.ttf");
+        }
+        
+        h1 {
+            font-size: 32px;
+            padding: 50px 10px 10px 50px;
+            text-align: left;
+        }
+        
+        form#Personal_Register {
+            display: flex;
+            position: absolute;
+        }
+        
+        div#cadastro-perfil,
+        div#conta {
+            width: 500px;
+            text-align: left;
+            padding: 20px 10px 20px 10px;
+            margin-top: 30px;
+        }
+        
+        div#cadastro-perfil span {
+            padding: 10px 5px 0px 0px;
+            text-align: left;
+        }
+        
+        div#box {
+            width: 650px;
+            border: 2px solid green;
+            position: relative;
+        }
+        
+        div#box label {
+            display: block;
+            font-size: 10px;
+            width: 120px;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            text-align: right;
+            padding: 5px 5px 5px 5px;
+        }
+        
+        div#box div {
+            padding: 20px 0px 20px 0px;
+        }
+        
+        .input-text {
+            display: block;
+            position: relative;
+            width: 450px;
+            height: 30px;
+            background: black;
+            border: 2px solid rgb(71, 71, 71);
+            overflow: hidden;
+            outline-style: none;
+            margin-left: 140px;
+            color: white;
+            font: 12px ethnocentric;
+            text-align: center;
+            padding-right: 10px;
+        }
+        
+        .input-text:hover {
+            background: rgb(71, 71, 71);
+            border: 2px solid green;
+            display: block;
+        }
+        
+        .input-text:focus {
+            border: 2px solid green;
+        }
+        
+        h1.tab {
+            width: 300px;
+            text-align: left;
+            float: center;
+            font-size: 14px;
+            padding: 10px 5px 10px 10px;
+        }
+        
+        span.text-obg {
+            margin-top: 20px;
+            width: 250px;
+            font-size: 12px;
+            padding: 30px 5px 30px 5px;
+        }
+        
+        #cep,
+        #complemento {
+            width: 145px;
+        }
+        
+        #numero {
+            width: 150px;
+        }
+        
+        #bairro,
+        #cidade {
+            width: 250px;
+        }
+        
+        #uf {
+            margin-left: 130px;
+            width: 50px;
+        }
+        
+        div#format-sexo-genero {
+            display: block;
+            position: relative;
+            width: 200px;
+            margin-left: 100px;
+        }
+        
+        div#format-sexo-genero label {
+            font-size: 16px;
+            text-align: left;
+            margin-left: 30px;
+        }
+        
+        div#format-sexo-genero input {
+            float: center;
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            outline-style: none;
+        }
+        
+        div#format-sexo-genero span {
+            font-size: 10px;
+        }
+        
+        div#conta {
+            position: relative;
+            left: 150px;
+        }
+        
+        div#conta div#box {
+            width: 600px;
+        }
+        
+        div#conta input.input-text {
+            width: 400px;
+        }
+        
+        div#label-enviar {
+            margin-top: 500px;
+            margin-left: -150px;
+            position: relative;
+        }
+        
+        button.btn-salvar {
+            width: 200px;
+            height: 30px;
+            background-color: rgb(0, 0, 0, 0.5);
+            border-style: none solid;
+            outline-style: none;
+            border-width: 2px;
+            border-color: #499531;
+            transform: skewX(0deg);
+            -ms-transform: skewX(0deg);
+            -webkit-transform: skewX(0deg);
+            overflow: hidden;
+            color: white;
+            cursor: pointer;
+            font: 18px ethnocentric;
+            text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
+        }
+        
+        button.btn-salvar:hover {
+            background: rgba(73, 73, 73, 0.5);
+        }
+        
+        button.btn-salvar:disabled {
+            cursor: not-allowed;
+            opacity: 0.4;
+        }
+        
+        span#alert_senha {
+            display: none;
+            width: 200px;
+            font: 10px Arial black;
+            color: red;
+            text-shadow: none;
+            padding-top: 5px;
+            margin-left: 140px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HEAD LIGHTS STORE</h1>
+    <form method="POST" name="registro-pessoal" id="Personal_Register">
+        <div id="cadastro-perfil">
+            <h1 class="tab">CADASTRO PERFIL</h1>
+            <div id="box">
+                <span class="text-obg">* Campos Obrigatórios.</span>
+                <div>
+                    <label>* NOME COMPLETO</label>
+                    <input class="input-text" id="nome-pessoal" name="nome-pessoal" type="text">
+                </div>
+                <div style="display: flex; padding: 0; border-bottom: none;">
+                    <div>
+                        <label>* CEP</label>
+                        <input class="input-text" id="cep" name="cep" type="text" maxlength="8">
+                    </div>
+                    <div id="format-sexo-genero">
+                        <span>* SEXO</span><br><br>
+                        <input id="sexo-masc" name="sexo-genero" type="radio" value="Masculino">
+                        <label for="sexo-masc">Masculino</label>
+                        <input id="sexo-fem" name="sexo-genero" type="radio" value="Feminino">
+                        <label for="sexo-fem">Feminino</label>
+                    </div>
+                </div>
+                <div>
+                    <label>* NOME DA RUA</label>
+                    <input class="input-text" id="endereco" name="endereco" type="text">
+                </div>
+                <div style="display: flex; padding: 0 ">
+                    <div>
+                        <label>* NÚMERO</label>
+                        <input class="input-text" id="numero" name="numero" type="text" maxlength="10">
+                    </div>
+                    <div>
+                        <label>COMPLEMENTO</label>
+                        <input class="input-text" id="complemento" name="complemento" type="text">
+                    </div>
+                </div>
+                <div>
+                    <label>* BAIRRO</label>
+                    <input class="input-text" id="bairro" name="bairro" type="text" maxlength="50">
+                </div>
+                <div style="display: flex; padding: 0;">
+                    <div>
+                        <label>* CIDADE</label>
+                        <input class="input-text" id="cidade" name="cidade" type="text" maxlength="100">
+                    </div>
+                    <div>
+                        <label>* UF</label>
+                        <input class="input-text" id="uf" name="uf" type="text" maxlength="2">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="conta">
+            <h1 class="tab">REGISTRO DA CONTA</h1>
+            <div id="box">
+                <span class="text-obg">* Campos Obrigatórios.</span>
+                <div>
+                    <label>* E-MAIL</label>
+                    <input class="input-text" id="email" name="email" type="email">
+                </div>
+                <div>
+                    <label>* SENHA</label>
+                    <input class="input-text" id="senha" name="senha" type="password">
+                </div>
+                <div>
+                    <label>* CONFIRMAR SENHA</label>
+                    <input class="input-text" id="confirma_senha" name="confirma_senha" type="password" onblur="validaSenha('senha', 'confirma_senha');">
+                    <span id="alert_senha">SENHAS NÃO COMBINAM</span>
+                </div>
+            </div>
+        </div>
+        <div id="label-enviar">
+            <button type="submit" class="btn-salvar" id="botao_salvar" disabled>SALVAR</button>
+        </div>
+    </form>
+    <script>
+        function validaSenha(senha, confirma_senha) {
+            var pass = document.getElementById(senha).value;
+            var confirm_pass = document.getElementById(confirma_senha).value;
+
+            if (pass != "" && confirm_pass != "" && pass == confirm_pass) {
+                document.getElementById("alert_senha").style.display = "none";
+                habilitaBotao(false);
+            } else {
+                document.getElementById("alert_senha").style.display = "block";
+                habilitaBotao(true);
+            }
+
+        }
+
+        function habilitaBotao(habilitar) {
+            document.getElementById("botao_salvar").disabled = habilitar;
+        }
+    </script>
+
+</body>
+
+
+
+</html>

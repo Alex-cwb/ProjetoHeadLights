@@ -19,6 +19,56 @@
             src: url("Imagens/ethnocentric.ttf");
         }
         
+        div#barraTopo {
+            background-color: rgb(0, 0, 0, 0.3);
+            height: 50px;
+        }
+        
+        div#login {
+            height: 40px;
+            margin: auto;
+            text-align: right;
+        }
+        
+        label#entrarLogin {
+            color: white;
+            font-family: ethnocentric;
+            font-size: 8px;
+        }
+        
+        input#inputLogin {
+            background-color: rgb(21, 58, 0, 0.5);
+            border-color: #394e39b9;
+            height: 12px;
+            width: 80px;
+            outline-style: none;
+        }
+        
+        #inputLogin:hover {
+            background-color: rgba(145, 145, 145, 0.5);
+        }
+        
+        #inputLogin:focus {
+            background-color: white;
+        }
+        
+        input#inputEntrar {
+            background-color: rgb(0, 0, 0, 0.5);
+            border-style: none solid;
+            outline-style: none;
+            border-width: 2px;
+            border-color: #499531;
+            transform: skewX(0deg);
+            -ms-transform: skewX(0deg);
+            -webkit-transform: skewX(0deg);
+            margin: 15px;
+            cursor: pointer;
+            overflow: hidden;
+            color: white;
+            font: 10px ethnocentric;
+            text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
+        }
+        
         img.logoLoja {
             /* Configurando a posição e tamanho da logo da loja */
             height: 200px;
@@ -256,6 +306,19 @@
 </head>
 
 <body>
+    <div id="barraTopo">
+        <div id="login">
+            <form>
+                <label id="entrarLogin">USUÁRIO</label>
+                <input id="inputLogin" type="text">
+                <label id="entrarLogin">SENHA</label>
+                <input id="inputLogin" type="text">
+                <input id="inputEntrar" type="submit" value="ENTRAR">
+                <a href="file:///C:/Users/alex1.DESKTOP-6C8MFV9/Desktop/Meus%20Projetos/Projetos/HeadLights/P%C3%A1gina/cadastro.html">
+                    <input id="inputEntrar" type="button" value="CADASTRAR" onclick="cadastro()"></a>
+            </form>
+        </div>
+    </div>
     <!-- Imagem da logo -->
     <img src="Imagens/HeadLights Store.png" class="logoLoja" />
     <!-- Barra com os botões das categorias de vestuários -->
@@ -331,7 +394,7 @@
     </div>
     <!-- Vestuário dos acessórios -->
     <div id="vestAcessorios">
-        <ul class=" formatAlign ">
+        <ul class=" formatAlign">
             <ul id="align ">
                 <li><img src="Store/Cordão.jpeg " class="imgRoupa ">
                     <br>CORDÃO<br>R$ 20,00<br>
@@ -340,41 +403,8 @@
         </ul>
     </div>
 
+    <script src="scripts/slide.js"></script>
     <script>
-        var slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-
-            /* Definindo as variáveis, com as classes que serão utilizadas */
-            var i;
-            var slides = document.getElementsByClassName("slider ");
-            var dots = document.getElementsByClassName("marcador ");
-
-            /* Não sei exatamente o que faz esse trecho */
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none ";
-            }
-
-            /* Incrementa para iniciar a animação do slide */
-            slideIndex++;
-
-            /* Se a variável for maior que o tamanho do slide, o valor volta a ser o valor inicial */
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-
-            /* Sincroniza os marcadores, junto a imagem do slide */
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active ", " ");
-            }
-
-            /* Onde faz a transição das imagens do slide */
-            slides[slideIndex - 1].style.display = "block ";
-            dots[slideIndex - 1].className += " active ";
-            setTimeout(showSlides, 3000);
-        }
-
         function mostrarConteudo(conteudo, ocultar1, ocultar2) {
             /* Função para a transição de categoria */
             var display = document.getElementById(conteudo).style.display;
