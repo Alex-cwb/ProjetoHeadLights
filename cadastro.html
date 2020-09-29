@@ -214,7 +214,7 @@
 <body>
 
     <h1>HEAD LIGHTS STORE</h1>
-    <form method="POST" name="registro-pessoal" id="Personal_Register">
+    <form method="POST" name="registro_pessoal" id="Personal_Register" onkeypress="validaCampo()">
         <div id="cadastro-perfil">
             <h1 class="tab">CADASTRO PERFIL</h1>
             <div id="box">
@@ -230,9 +230,9 @@
                     </div>
                     <div id="format-sexo-genero">
                         <span>* SEXO</span><br><br>
-                        <input id="sexo-masc" name="sexo-genero" type="radio" value="Masculino">
+                        <input id="sexo-masc" name="sexo-genero" type="radio">
                         <label for="sexo-masc">Masculino</label>
-                        <input id="sexo-fem" name="sexo-genero" type="radio" value="Feminino">
+                        <input id="sexo-fem" name="sexo-genero" type="radio">
                         <label for="sexo-fem">Feminino</label>
                     </div>
                 </div>
@@ -283,7 +283,7 @@
                 </div>
                 <div>
                     <label>* CONFIRMAR SENHA</label>
-                    <input class="input-text" id="confirma_senha" name="confirma_senha" type="password" onblur="validaSenha('senha', 'confirma_senha');">
+                    <input class="input-text" id="confirma_senha" name="confirma_senha" type="password">
                     <span id="alert_senha">SENHAS NÃO COMBINAM</span>
                 </div>
             </div>
@@ -292,25 +292,9 @@
             <button type="submit" class="btn-salvar" id="botao_salvar" disabled>SALVAR</button>
         </div>
     </form>
-    <script>
-        function validaSenha(senha, confirma_senha) {
-            var pass = document.getElementById(senha).value;
-            var confirm_pass = document.getElementById(confirma_senha).value;
 
-            if (pass != "" && confirm_pass != "" && pass == confirm_pass) {
-                document.getElementById("alert_senha").style.display = "none";
-                habilitaBotao(false);
-            } else {
-                document.getElementById("alert_senha").style.display = "block";
-                habilitaBotao(true);
-            }
 
-        }
-
-        function habilitaBotao(habilitar) {
-            document.getElementById("botao_salvar").disabled = habilitar;
-        }
-    </script>
+    <script src="Scripts/validar_cadastro.js"></script>
 
 </body>
 
