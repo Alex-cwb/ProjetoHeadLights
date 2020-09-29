@@ -88,7 +88,7 @@
             box-shadow: -4px 4px 1px #000000, -7px 7px 1px #499531;
         }
         
-        button#btnCat {
+        input#btnCat {
             /* Configurando o botão de categoria */
             width: 200px;
             height: 50px;
@@ -107,12 +107,12 @@
             text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
         }
         
-        button#btnCat:hover {
+        #btnCat:hover {
             /* Efeito quando o mouse estiver em cima do botão */
             background-color: rgb(255, 255, 255, 0.3);
         }
         
-        button#btnCat:after {
+        #btnCat:after {
             /* Efetio que ocorre quando o botão é clicado */
             content: "";
             background-color: white;
@@ -126,13 +126,13 @@
             transition: all 0.5s;
         }
         
-        button#btnCat:active:after {
+        #btnCat:active:after {
             margin: 0;
             opacity: 1;
             transition: 0s;
         }
         
-        button#btnCat:focus {
+        #btnCat:focus {
             /* Efeito após o clique no botão */
             background-color: rgb(255, 255, 255, 0.1);
             outline-style: none;
@@ -301,11 +301,89 @@
             background-color: rgb(255, 255, 255, 0.1);
             outline-style: none;
         }
+        
+        div#boxComprar {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(31, 31, 31, 0.7);
+            z-index: 4;
+        }
+        
+        div#comprarProduto {
+            background: #001d00e7;
+            position: fixed;
+            width: 400px;
+            height: 300px;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid green;
+            border-radius: 0 10%;
+            color: white;
+            font: 18px ethnocentric;
+        }
+        
+        div#comprarProduto>div {
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        input#quantidade {
+            width: 50px;
+            text-align: center;
+            font: 14px ethnocentric;
+        }
+        
+        button.btn_compraProduto {
+            width: 150px;
+            height: 30px;
+            background-color: rgb(0, 0, 0, 0.5);
+            border-style: none solid;
+            border-width: 2px;
+            border-color: #499531;
+            outline-style: none;
+            cursor: pointer;
+            color: white;
+            font: 14px ethnocentric;
+            text-shadow: -2px 2px 1px #000000, -3px 3px 1px #499531;
+            margin: 0 10px;
+        }
+        
+        button.btn_compraProduto:hover {
+            background: rgba(73, 73, 73, 0.5);
+        }
     </style>
 
 </head>
 
 <body>
+    <div id="boxComprar">
+        <div id="comprarProduto">
+            <div>
+                <span>TAMANHO</span><br><br>
+                <input id="tamanhoP" type="radio" name="tamanho" value="P">
+                <label for="tamanhoP">P</label>
+                <input id="tamanhoM" type="radio" name="tamanho" value="M">
+                <label for="tamanhoM">M</label>
+                <input id="tamanhoG" type="radio" name="tamanho" value="G">
+                <label for="tamanhoG">G</label>
+                <input id="tamanhoGG" type="radio" name="tamanho" value="GG">
+                <label for="tamanhoGG">GG</label>
+            </div>
+            <div>
+                <span>QUANTIDADE</span>
+                <input id="quantidade" name="quantidade" type="number">
+            </div>
+            <div>
+                <button type="reset" class="btn_compraProduto" id="botao_cancelar" onclick="habilita();">CANCELAR</button>
+                <button type="submit" class="btn_compraProduto" id="botao_salvar" onclick="habilita();">SALVAR</button>
+            </div>
+        </div>
+    </div>
     <div id="barraTopo">
         <div id="login">
             <form>
@@ -314,7 +392,7 @@
                 <label id="entrarLogin">SENHA</label>
                 <input id="inputLogin" type="text">
                 <input id="inputEntrar" type="submit" value="ENTRAR">
-                <a href="https://rawcdn.githack.com/Alex-cwb/ProjetoHeadLights/87f2295e6180f2ed94f0e46fa468f4c5796ca2e1/cadastro.html">
+                <a href="file:///C:/Users/alex1.DESKTOP-6C8MFV9/Desktop/Meus%20Projetos/Projetos/HeadLights/P%C3%A1gina/cadastro.html">
                     <input id="inputEntrar" type="button" value="CADASTRAR" onclick="cadastro()"></a>
             </form>
         </div>
@@ -324,12 +402,12 @@
     <!-- Barra com os botões das categorias de vestuários -->
     <div class="barraCtg">
         <span style="margin-left: 25%;">
-            <button id="btnCat" 
-            onclick="mostrarConteudo('vestMasculino', 'vestFeminino', 'vestAcessorios')"><p id="textBtn">MASCULINO</p></button>
-            <button id="btnCat" 
-            onclick="mostrarConteudo('vestFeminino', 'vestMasculino', 'vestAcessorios')"><p id="textBtn">FEMININO</p></button>
-            <button id="btnCat"
-            onclick="mostrarConteudo('vestAcessorios', 'vestMasculino', 'vestFeminino')"><p id="textBtn">ACESSÓRIOS</p></button>
+            <input id="btnCat" type="button" value="MASCULINO"
+            onclick="mostrarConteudo('vestMasculino', 'vestFeminino', 'vestAcessorios')">
+            <input id="btnCat" type="button" value="FEMININO"
+            onclick="mostrarConteudo('vestFeminino', 'vestMasculino', 'vestAcessorios')">
+            <input id="btnCat" type="button" value="ACESSÓRIOS"
+            onclick="mostrarConteudo('vestAcessorios', 'vestMasculino', 'vestFeminino')">
         </span>
     </div>
     <!-- O slide das imagens -->
@@ -354,22 +432,22 @@
         <ul class="formatAlign">
             <ul id="align">
                 <li><img src="Store/camiseta preta 1.jpeg " class="imgRoupa ">
-                    <br>CAMISETA PRETA<br>R$ 40,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CAMISETA PRETA<br>R$ 50,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
                 <li><img src="Store/camiseta vermelha 1.jpeg " class="imgRoupa ">
-                    <br>CAMISETA VERMELHA<br>R$ 40,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CAMISETA VERMELHA<br>R$ 50,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
                 <li><img src="Store/Camiseta Cinza com Preto.jpeg " class="imgRoupa ">
-                    <br>CAMISETA CINZA COM PRETO<br>R$ 40,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CAMISETA CINZA COM PRETO<br>R$ 50,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
                 <li><img src="Store/Camiseta Branca com Preto.jpeg " class="imgRoupa ">
-                    <br>CAMISETA BRANCA COM PRETO<br>R$ 40,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CAMISETA BRANCA COM PRETO<br>R$ 50,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
             </ul>
             <ul id="align">
                 <li><img src="Store/Camiseta Cinza com Branco.jpeg " class="imgRoupa ">
-                    <br>CAMISETA CINZA COM BRANCO<br>R$ 40,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CAMISETA CINZA COM BRANCO<br>R$ 50,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
             </ul>
         </ul>
     </div>
@@ -378,17 +456,17 @@
         <ul class="formatAlign">
             <ul id="align">
                 <li><img src="Store/Cropped Rosa com branco.jpeg" class="imgRoupa">
-                    <br>CROPPED ROSA COM BRANCO<br>R$ 50,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CROPPED ROSA COM BRANCO<br>R$ 80,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
                 <li><img src="Store/Cropped Preto com Branco.jpeg" class="imgRoupa">
-                    <br>CROPPED PRETO COM BRANCO<br>R$ 50,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CROPPED PRETO COM BRANCO<br>R$ 80,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
                 <li><img src="Store/Cropped Branco com Preto.jpeg" class="imgRoupa">
-                    <br>CROPPED BRANCO COM PRETO<br>R$ 50,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CROPPED BRANCO COM PRETO<br>R$ 80,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
                 <li><img src="Store/Cropped Rosa com branco.jpeg" class="imgRoupa">
-                    <br>CROPPED ROSA COM BRANCO<br>R$ 50,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CROPPED ROSA COM BRANCO<br>R$ 80,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
             </ul>
         </ul>
     </div>
@@ -397,26 +475,22 @@
         <ul class=" formatAlign">
             <ul id="align ">
                 <li><img src="Store/Cordão.jpeg " class="imgRoupa ">
-                    <br>CORDÃO<br>R$ 20,00<br>
-                    <button id="btnComprar">COMPRAR</button></li>
+                    <br>CORDÃO<br>R$ 10,00<br>
+                    <button id="btnComprar" onclick="habilita()">COMPRAR</button></li>
             </ul>
         </ul>
     </div>
 
     <script src="scripts/slide.js"></script>
     <script>
-        function mostrarConteudo(conteudo, ocultar1, ocultar2) {
-            /* Função para a transição de categoria */
-            var display = document.getElementById(conteudo).style.display;
+        function habilita() {
+            var display = document.getElementById("boxComprar").style.display;
 
             if (display == "none") {
-                document.getElementById(conteudo).style.display = "block";
-                document.getElementById("slide").style.display = "none";
-                document.getElementById(ocultar1).style.display = "none";
-                document.getElementById(ocultar2).style.display = "none";
+                document.getElementById("boxComprar").style.display = "flex";
+
             } else {
-                document.getElementById(conteudo).style.display = "none";
-                document.getElementById("slide").style.display = "block";
+                document.getElementById("boxComprar").style.display = "none";
             }
         }
     </script>
