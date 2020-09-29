@@ -31,3 +31,18 @@ function showSlides() {
     dots[slideIndex - 1].className += " active ";
     setTimeout(showSlides, 3000);
 }
+
+function mostrarConteudo(conteudo, ocultar1, ocultar2) {
+    /* Função para a transição de categoria */
+    var display = document.getElementById(conteudo).style.display;
+
+    if (display == "none") {
+        document.getElementById(conteudo).style.display = "block";
+        document.getElementById("slide").style.display = "none";
+        document.getElementById(ocultar1).style.display = "none";
+        document.getElementById(ocultar2).style.display = "none";
+    } else {
+        document.getElementById(conteudo).style.display = "none";
+        document.getElementById("slide").style.display = "block";
+    }
+}
